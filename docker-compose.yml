@@ -1,5 +1,14 @@
-version: '3.1'
+version: '2.0'
 services:
+  nginx:
+    restart: always
+    image: nginx
+    ports:
+      - 8091:80
+    volumes:
+      - ./nginx/conf.d/:/etc/nginx/conf.d
+      - ./frontend/dist:/var/www/html/
+      - ./static/:/static/
   app-pm2:
       container_name: app-pm2
       #构建容器
@@ -21,12 +30,3 @@ services:
   #   restart: always 
   #   ports:
   #     - 8081:8081
-  nginx:
-    restart: always
-    image: nginx
-    ports:
-      - 8091:80
-    volumes:
-      - ./nginx/conf.d/:/etc/nginx/conf.d
-      - ./frontend/dist:/var/www/html/
-      - ./static/:/static/

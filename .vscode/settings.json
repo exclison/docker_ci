@@ -17,10 +17,10 @@
             "type": "sftp",
             "name": "AliyunServer",
             "dir": "/root/source/docker_ci",
-            "host": "47.98.252.43",
+            "host": "47.99.87.185",
             "port": 22,
             "user": "root",
-            "privateKey": "/Users/xia/.ssh/id_rsa"
+            "privateKey": "/Users/Exclison/.ssh/exclison_mac_sky.pem"
         }],
     },
 }
