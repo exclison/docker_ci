@@ -17,7 +17,7 @@ var handler = createHandler({ path: '/docker_ci', secret: '123456' })
 http.createServer(function (req, res) {
 
     handler(req, res, function (err) {
-        res.statusCode = 404
+        res.statusCode = 200
         res.end('no such location')
     })
 }).listen(7777,() =>{
@@ -30,6 +30,7 @@ handler.on('error', function (err) {
 
 
 handler.on('*', function (event) {
+    console.log('on')
     console.log('Received *', event.payload.action);
     //   run_cmd('sh', ['./deploy-dev.sh'], function(text){ console.log(text) });
 })
